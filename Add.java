@@ -1,15 +1,12 @@
 public class Add {
-    // static  void sum(int... a){
-
-    // }
-    // static void sum2(int []a){
-
-    // }
-    static public  void main(String ...arguments) {
-    //   sum(10,20,30,340,40,50);  
-    //   int r[] = new int[10];
-    //   sum2(r);
+    public static void main(String[] args) {
+        // String r = new String("Amit");
+        // r.toUpperCase();
+        int sum = 0;
+        // Array Traverse
+        for(int i = 0; i<args.length; i++){
+            sum = sum + Integer.parseInt(args[i]);
+        }
+        System.out.println("Sum is "+sum);
     }
 }
-
-// Add 100 200 300 40 50
