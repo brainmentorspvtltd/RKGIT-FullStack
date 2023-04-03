@@ -9,10 +9,13 @@
  * Overriding method signature should be same as parent.
  * Overriding means parent version is outdated. that's why we override in child
  */
-class Account{
+abstract class Account{
     int id;
     String name;
     double balance;
+    Account(){
+        System.out.println("Account class Cons");
+    }
     @Deprecated
     void deposit(){
         System.out.println("Account Deposit...");
@@ -23,19 +26,24 @@ class Account{
     void checkBalance(){
         System.out.println("Account CheckBalance....");
     }
-    @Deprecated
-    void roi(){
-        System.out.println("Generic ROI 2%");
-    }
+    abstract void roi(); // Bodyless method
+    // @Deprecated
+    // void roi(){
+    //     System.out.println("Generic ROI 2%");
+    // }
 }
 class SavingAccount extends Account{
+    SavingAccount(){
+        super();
+    }
     @Override
     void roi(){
-        super.roi();
+        //super.roi();
         System.out.println("ROI for SA 4%");
     }
 }
 class CurrentAccount extends Account{
+    @Override
     void roi(){
         System.out.println("ROI for CA 5%");
     }
@@ -44,18 +52,32 @@ class CurrentAccount extends Account{
     }
 }
 public class ISA {
-    public static void main(String[] args) {
-        SavingAccount sa = new SavingAccount();
-        sa.deposit();
-        sa.withDraw();
-        sa.checkBalance();
-        sa.roi();
 
-        CurrentAccount ca = new CurrentAccount();
-        ca.deposit();
-        ca.withDraw();
-        ca.checkBalance();
-        ca.roi();
-        ca.noLimit();
+    static void call(Account account){
+        account.deposit();
+        account.withDraw();
+        account.checkBalance();
+        account.roi();
+        if(account instanceof CurrentAccount){
+            ((CurrentAccount)account).noLimit(); // Downcasting
+        }
+    }
+    public static void main(String[] args) {
+        call(new SavingAccount());
+        call(new CurrentAccount());
+       // Account a = new Account();
+    //    Account account = new SavingAccount(); // Upcasting
+    //     //SavingAccount sa = new SavingAccount();
+    //     account.deposit();
+    //     account.withDraw();
+    //     account.checkBalance();
+    //     account.roi();
+
+    //     account = new CurrentAccount();
+    //     account.deposit();
+    //     account.withDraw();
+    //     account.checkBalance();
+    //     account.roi();
+       // account.noLimit();
     }
 }
