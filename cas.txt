@@ -1,0 +1,58 @@
+CAS (Customer Acquisition System)
+
+Loan 
+
+1. Apply For Loan (Sourcing)
+
+Name:  Display - Pascal Case
+Age
+City:
+Loan Type (HL, AL) Choice
+Amount
+Mobile
+
+2. Quick Data Entry (QDE)
+Mobile - 10 digit
+Email - @ .com/.in
+DOB
+Income Annual
+Liability
+HL - 85%
+AL - 55-60%
+Duration Max 30 Y
+Auto Loan Max 7-10Y
+
+3. Dedupe Check (SIBIL Score)
+Negative Customers DB
+
+Mobile, Email , DOB
+100% match
+
+4. Bank Manager Decide Loan Application Reject , Approve
+
+5. Reject - reason
+
+6. Approve - Loan Score
+>=18 to <=35
+Income 2L
+1L  (MAX EMI)
+
+
+Assets - 10 L 
+
+Liability  1.5 L
+
+10L P - 8.5L
+@10%
+
+Pr + I = Loan Amount to Pay
+
+1000
+10%
+10
+1000/10 = 100
+100/10 = 10
+
+EMI = 100 + 10 = 110
+
+
